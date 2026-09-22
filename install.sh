@@ -1,13 +1,11 @@
 #!/bin/bash
 clear
 VERSION=$(curl -s https://api.github.com/repos/mtlynch/picoshare/releases/latest | grep tag_name | cut -d '"' -f4)
-VERSION_SHORT="${VERSION#v}"
- VERSION="v$VERSION"
 INSTALL_DIR="/usr/local/PicoShare"
 DATA_DIR="${INSTALL_DIR}/data"
 BIN="picoshare"
 ARCHIVE="picoshare-${VERSION}-linux-amd64.tar.gz"
-URL="https://github.com/mtlynch/picoshare/releases/download/${VERSION_SHORT}/${ARCHIVE}"
+URL="https://github.com/mtlynch/picoshare/releases/download/${VERSION}/${ARCHIVE}"
 
 PORT=$1
 SECRET=$2
